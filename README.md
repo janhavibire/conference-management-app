@@ -1,18 +1,44 @@
-# Salesforce DX Project: Next Steps
+# Conference Management App (Salesforce)
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Overview
+This is a Salesforce-based Conference Management application built as part of a Junior Salesforce Developer assessment.
 
-## How Do You Plan to Deploy Your Changes?
+The application allows admins to manage speakers and sessions and prevents speakers from being assigned to overlapping sessions.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Features
+- Search speakers by name and speciality
+- View sessions by date
+- Assign speakers to sessions
+- Prevent scheduling conflicts using Apex triggers
+- Lightning Web Components based UI
+- User-friendly error handling with toast messages
 
-## Configure Your Salesforce DX Project
+## Tech Stack
+- Salesforce Lightning Web Components (LWC)
+- Apex
+- SOQL
+- Salesforce DX
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Components
+### Lightning Web Components
+- speakerManager (container)
+- speakerSearch
+- speakerList
+- bookSession
 
-## Read All About It
+### Apex
+- SpeakerController.cls
+- SpeakerAssignmentTrigger.trigger
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Business Logic
+- Trigger ensures a speaker cannot be booked for overlapping sessions
+- UI communicates with Apex for data handling
+- Proper validation and error feedback
+
+## How to Run
+1. Deploy the project to a Salesforce Developer Org
+2. Open the Lightning App Page created for the Speaker Manager
+3. Search speakers and assign them to sessions
+
+## Author
+Janhavi Bire
