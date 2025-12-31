@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Book Session">
+
+        <template if:true={hasSpeaker}>
+            <div class="slds-p-around_medium">
+                <p>
+                    <b>Name:</b> {speaker.Name}<br/>
+                    <b>Speciality:</b> {speaker.Speciality__c}<br/>
+                    <b>Bio:</b> {speaker.Bio__c}
+                </p>
+
+                <lightning-input
+                    type="date"
+                    label="Select Date"
+                    onchange={handleDateChange}>
+                </lightning-input>
+
+                <lightning-combobox
+    label="Select Session"
+    options={sessionOptions}
+    value={selectedSessionId}
+    onchange={handleSessionChange}>
+</lightning-combobox>
+
+
+
+                <lightning-button
+                    label="Create Assignment"
+                    variant="brand"
+                    class="slds-m-top_medium"
+                    disabled={disableButton}
+                    onclick={handleCreate}>
+                </lightning-button>
+            </div>
+        </template>
+
+        <template if:false={hasSpeaker}>
+            <p class="slds-p-around_medium">
+                Select a speaker to book a session.
+            </p>
+        </template>
+
+    </lightning-card>
+</template>
