@@ -18,13 +18,10 @@ export default class SpeakerList extends LightningElement {
     ];
 
     handleRowAction(event) {
-        const selectedSpeaker = event.detail.row;
+        const selected = event.detail.row;
 
-        this.dispatchEvent(
-            new CustomEvent('selectspeaker', {
-                detail: selectedSpeaker,
-                bubbles: true,
-                composed: true
+        this.dispatchEvent(new CustomEvent('speakerselect', {
+            detail: selected
             })
         );
     }

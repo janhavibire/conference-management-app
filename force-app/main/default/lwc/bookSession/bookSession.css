@@ -1,0 +1,29 @@
+.session-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.speaker-info {
+    background: #f3f6f9;
+    padding: 0.75rem;
+    border-radius: 6px;
+}
+
+.tag {
+    background: #0176d3;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.empty {
+    color: #777;
+    font-style: italic;
+}

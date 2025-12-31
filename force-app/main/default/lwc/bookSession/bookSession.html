@@ -1,44 +1,38 @@
 <template>
-    <lightning-card title="Book Session">
+    <template if:true={hasSpeaker}>
+        <div class="session-box">
 
-        <template if:true={hasSpeaker}>
-            <div class="slds-p-around_medium">
-                <p>
-                    <b>Name:</b> {speaker.Name}<br/>
-                    <b>Speciality:</b> {speaker.Speciality__c}<br/>
-                    <b>Bio:</b> {speaker.Bio__c}
-                </p>
-
-                <lightning-input
-                    type="date"
-                    label="Select Date"
-                    onchange={handleDateChange}>
-                </lightning-input>
-
-                <lightning-combobox
-    label="Select Session"
-    options={sessionOptions}
-    value={selectedSessionId}
-    onchange={handleSessionChange}>
-</lightning-combobox>
-
-
-
-                <lightning-button
-                    label="Create Assignment"
-                    variant="brand"
-                    class="slds-m-top_medium"
-                    disabled={disableButton}
-                    onclick={handleCreate}>
-                </lightning-button>
-            </div>
-        </template>
-
-        <template if:false={hasSpeaker}>
-            <p class="slds-p-around_medium">
-                Select a speaker to book a session.
+            <p class="speaker-info">
+                <b>{speaker.Name}</b><br/>
+                <span class="tag">{speaker.Speciality__c}</span>
             </p>
-        </template>
 
-    </lightning-card>
+            <lightning-input
+                type="date"
+                label="Select Date"
+                onchange={handleDateChange}>
+            </lightning-input>
+
+            <lightning-combobox
+                label="Select Session"
+                options={sessionOptions}
+                onchange={handleSessionChange}>
+            </lightning-combobox>
+
+            <lightning-button
+                label="Create Assignment"
+                variant="brand"
+                class="full-btn"
+                disabled={disableButton}
+                onclick={handleCreate}>
+            </lightning-button>
+
+        </div>
+    </template>
+
+    <template if:false={hasSpeaker}>
+        <p class="empty">
+            👈 Select a speaker to start booking
+        </p>
+    </template>
 </template>

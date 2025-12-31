@@ -1,23 +1,27 @@
 <template>
-    <lightning-card title="Speaker Manager">
-        <div class="slds-grid slds-gutters">
+    <div class="container">
 
-            <!-- LEFT SECTION -->
-            <div class="slds-col slds-size_1-of-2">
-                <c-speaker-search onsearch={handleSearch}></c-speaker-search>
-
-              <c-speaker-list
+        <!-- LEFT -->
+        <div class="left">
+            <lightning-card title="🔍 Speaker Explorer">
+                <div class="card-body">
+                    <c-speaker-search onsearch={handleSearch}></c-speaker-search>
+<c-speaker-list
     speakers={speakers}
-    onselectspeaker={handleSpeakerSelect}>
+    onspeakerselect={handleSpeakerSelect}>
 </c-speaker-list>
-
-            </div>
-
-            <!-- RIGHT SECTION -->
-            <div class="slds-col slds-size_1-of-2">
-                <c-book-session speaker={selectedSpeaker}></c-book-session>
-            </div>
-
+                </div>
+            </lightning-card>
         </div>
-    </lightning-card>
+
+        <!-- RIGHT -->
+        <div class="right">
+            <lightning-card title="📅 Book Session">
+                <div class="card-body">
+                    <c-book-session speaker={selectedSpeaker}></c-book-session>
+                </div>
+            </lightning-card>
+        </div>
+
+    </div>
 </template>
